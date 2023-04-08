@@ -27,4 +27,11 @@ public class AddressService {
         return addressRepository.findAll();
     }
 
+    @Transactional
+    public List<Address> mainAddress(final Long personId) {
+
+        return addressRepository.findByPersonIdAndIsPrimary(personId, true);
+
+    }
+
 }
