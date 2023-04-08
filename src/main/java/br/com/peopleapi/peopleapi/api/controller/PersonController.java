@@ -1,7 +1,10 @@
 package br.com.peopleapi.peopleapi.api.controller;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -40,6 +43,18 @@ public class PersonController {
                 .ok(personAssembler
                         .toDto(personRegistrationService.update(personAssembler.toPerson(personInputDTO), personId)));
 
+    }
+
+    @GetMapping("/{personId}")
+    public PersonOutDTO consult(@PathVariable final Long personId) {
+
+        return personAssembler.toDto(personRegistrationService.search(personId));
+
+    }
+
+    @GetMapping
+    public List<PersonOutDTO> list() {
+        return personAssembler.toCollectionDto(personRegistrationService.list());
     }
 
 }

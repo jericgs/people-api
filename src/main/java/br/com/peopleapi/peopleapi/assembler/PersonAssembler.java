@@ -1,5 +1,8 @@
 package br.com.peopleapi.peopleapi.assembler;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
@@ -20,6 +23,10 @@ public class PersonAssembler {
 
     public PersonOutDTO toDto(final Person person) {
         return modelMapper.map(person, PersonOutDTO.class);
+    }
+
+    public List<PersonOutDTO> toCollectionDto(final List<Person> people) {
+        return people.stream().map(this::toDto).collect(Collectors.toList());
     }
 
 }
