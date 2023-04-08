@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.peopleapi.peopleapi.api.model.PersonInputDTO;
 import br.com.peopleapi.peopleapi.api.model.PersonOutDTO;
 import br.com.peopleapi.peopleapi.assembler.PersonAssembler;
-import br.com.peopleapi.peopleapi.domain.service.PersonRegistrationService;
+import br.com.peopleapi.peopleapi.domain.service.PersonService;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
@@ -25,13 +25,13 @@ import lombok.AllArgsConstructor;
 public class PersonController {
 
     private PersonAssembler personAssembler;
-    private PersonRegistrationService personRegistrationService;
+    private PersonService personService;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public PersonOutDTO add(@RequestBody final PersonInputDTO personInputDTO) {
 
-        return personAssembler.toDto(personRegistrationService.register(personAssembler.toPerson(personInputDTO)));
+        return personAssembler.toDto(personService.register(personAssembler.toPerson(personInputDTO)));
 
     }
 
@@ -41,20 +41,20 @@ public class PersonController {
 
         return ResponseEntity
                 .ok(personAssembler
-                        .toDto(personRegistrationService.update(personAssembler.toPerson(personInputDTO), personId)));
+                        .toDto(personService.update(personAssembler.toPerson(personInputDTO), personId)));
 
     }
 
     @GetMapping("/{personId}")
     public PersonOutDTO consult(@PathVariable final Long personId) {
 
-        return personAssembler.toDto(personRegistrationService.search(personId));
+        return personAssembler.toDto(personService.search(personId));
 
     }
 
     @GetMapping
     public List<PersonOutDTO> list() {
-        return personAssembler.toCollectionDto(personRegistrationService.list());
+        return personAssembler.toCollectionDto(personService.list());
     }
 
 }

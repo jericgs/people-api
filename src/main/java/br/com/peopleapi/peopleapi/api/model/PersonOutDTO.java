@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class PersonOutDTO {
+public class PersonOutDTO extends PersonBaseDTO {
 
     private String name;
     private LocalDate dateBirth;

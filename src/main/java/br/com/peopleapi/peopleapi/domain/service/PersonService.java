@@ -12,7 +12,7 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @Service
-public class PersonRegistrationService {
+public class PersonService {
 
     private PersonRepository personRepository;
 
