@@ -15,6 +15,7 @@ import br.com.peopleapi.peopleapi.api.model.AddressInputDTO;
 import br.com.peopleapi.peopleapi.api.model.AddressOutDTO;
 import br.com.peopleapi.peopleapi.assembler.AddressAssembler;
 import br.com.peopleapi.peopleapi.domain.service.AddressService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
@@ -27,7 +28,7 @@ public class AddressController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public AddressOutDTO add(@RequestBody final AddressInputDTO addressInputDTO) {
+    public AddressOutDTO add(@RequestBody final @Valid AddressInputDTO addressInputDTO) {
 
         return addressAssembler.toDto(addressService.register(addressAssembler.toAddress(addressInputDTO)));
 

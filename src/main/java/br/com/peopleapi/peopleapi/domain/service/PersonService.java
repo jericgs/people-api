@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import br.com.peopleapi.peopleapi.domain.exception.EntityNotFoundException;
 import br.com.peopleapi.peopleapi.domain.model.Person;
 import br.com.peopleapi.peopleapi.domain.repository.PersonRepository;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor

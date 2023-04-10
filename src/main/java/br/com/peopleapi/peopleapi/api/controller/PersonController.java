@@ -17,6 +17,8 @@ import br.com.peopleapi.peopleapi.api.model.PersonInputDTO;
 import br.com.peopleapi.peopleapi.api.model.PersonOutDTO;
 import br.com.peopleapi.peopleapi.assembler.PersonAssembler;
 import br.com.peopleapi.peopleapi.domain.service.PersonService;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
@@ -29,15 +31,15 @@ public class PersonController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public PersonOutDTO add(@RequestBody final PersonInputDTO personInputDTO) {
+    public PersonOutDTO add(@RequestBody final @Valid PersonInputDTO personInputDTO) {
 
         return personAssembler.toDto(personService.register(personAssembler.toPerson(personInputDTO)));
 
     }
 
     @PutMapping("/{personId}")
-    public ResponseEntity<PersonOutDTO> update(@PathVariable final Long personId,
-            @RequestBody final PersonInputDTO personInputDTO) {
+    public ResponseEntity<PersonOutDTO> update(@PathVariable final @NotNull Long personId,
+            @RequestBody final @Valid PersonInputDTO personInputDTO) {
 
         return ResponseEntity
                 .ok(personAssembler
@@ -46,7 +48,7 @@ public class PersonController {
     }
 
     @GetMapping("/{personId}")
-    public PersonOutDTO consult(@PathVariable final Long personId) {
+    public PersonOutDTO consult(@PathVariable final @NotNull Long personId) {
 
         return personAssembler.toDto(personService.search(personId));
 
