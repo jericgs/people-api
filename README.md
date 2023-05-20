@@ -49,3 +49,7 @@ Requisitos Garantidos:
 - Polimorfismo na classe "ApiExceptionHandler"
 - Tratamento de exceção com try / catch na classe "AddressService"
 - Método que retorne um valor (não void), com exemplo a classe "AddressAssembler"
+
+Links
+- Hiroku: https://people-spring-api.herokuapp.com/people
+- Swagger: https://people-spring-api.herokuapp.com/swagger-ui/index.html
