@@ -39,7 +39,7 @@ Uma Pessoa deve ter os seguintes campos:
 Diferencial
 
 - Todas as respostas da API devem ser JSON
-- Banco de dados H2
+- Banco de dados MySQL
 - Testes
 - Swagger
 - Clean Code
