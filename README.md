@@ -21,6 +21,7 @@ Usando Spring boot, crie uma API simples para gerenciar Pessoas. Esta API deve p
 - Consultar uma pessoa
 - Listar pessoas
 - Criar endereço para pessoa
+- Remover endereço da pessoa
 - Listar endereços da pessoa
 - Poder informar qual endereço é o principal da pessoa
 
@@ -35,13 +36,16 @@ Uma Pessoa deve ter os seguintes campos:
   -> Número
   -> Cidade
 
-
-Requisitos 
+Diferencial
 
 - Todas as respostas da API devem ser JSON
 - Banco de dados H2
-
-
-Diferencial
 - Testes
+- Swagger
 - Clean Code
+
+Requisitos Garantidos:
+
+- Polimorfismo na classe "ApiExceptionHandler"
+- Tratamento de exceção com try / catch na classe "AddressService"
+- Método que retorne um valor (não void), com exemplo a classe "AddressAssembler"

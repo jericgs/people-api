@@ -21,6 +21,11 @@ import br.com.peopleapi.peopleapi.domain.exception.BusinessException;
 import br.com.peopleapi.peopleapi.domain.exception.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 
+/**
+ * O polimorfismo ocorre nas anotações @ExceptionHandler que são usadas para
+ * lidar com exceções específicas. Essas anotações permitem que métodos
+ * diferentes sejam executados dependendo do tipo de exceção lançada.
+ */
 @AllArgsConstructor
 @ControllerAdvice
 public class ApiExceptionHandler extends ResponseEntityExceptionHandler {

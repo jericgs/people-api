@@ -12,9 +12,9 @@ import io.swagger.v3.oas.annotations.info.License;
 @Info(
     title = "Demo",
     version = "1.0",
-    description = "Documentation for our SBDemo API Application",
-    license = @License(name = "Apache 2.0", url = "http://foo.bar"),
-    contact = @Contact(url = "https://www.thomasjayconsulting.com", name = "Tom", email = "tom@thomasjayconsulting.com")
+    description = "Documentation for our people-api",
+    license = @License(name = "Apache 2.0", url = "https://shre.ink/QsYH"),
+    contact = @Contact(url = "https://shre.ink/QsYH", name = "Érico Gomes", email = "jerick.gs@gmail.com")
 ))
 public class SwaggerConfig {
 
