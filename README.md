@@ -53,3 +53,4 @@ Requisitos Garantidos:
 Links
 - Hiroku: https://people-spring-api.herokuapp.com/people
 - Swagger: https://people-spring-api.herokuapp.com/swagger-ui/index.html
+- Github do APP que Consome a API: https://github.com/jericgs/app-people
